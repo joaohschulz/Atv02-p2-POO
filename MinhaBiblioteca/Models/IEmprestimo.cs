@@ -1,4 +1,4 @@
 public interface IEmprestestimo
 {
-    void Emprestar();
+    public void Emprestar();
 }

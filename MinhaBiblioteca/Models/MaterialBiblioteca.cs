@@ -1,5 +1,8 @@
 public abstract class MaterialBiblioteca
 {
     public int Id {get; init;}
-    public DateOnly PrazoEmprestimo {get;set;}
+    public abstract int PrazoEmprestimo {get;set;}
+
+    public abstract string Cadastrar();
+
 }

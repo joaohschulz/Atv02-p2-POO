@@ -1,3 +1,4 @@
+namespace MinhaBiblioteca.Models;
 public class Livro : MaterialBiblioteca
 {
     public string ?Autor {get; set;}

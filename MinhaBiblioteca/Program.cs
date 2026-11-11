@@ -5,6 +5,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<IMaterialRepository, MaterialRepository>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirFrontend", policy =>
+    {
+        policy.AllowAnyHeader().AllowAnyMethod().AllowAnyHeader();
+    });
+});
+
 
 var app = builder.Build();
 
@@ -20,6 +29,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseCors("PermitirFrontend");
 
 app.MapControllers();
 

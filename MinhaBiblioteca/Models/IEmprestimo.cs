@@ -2,5 +2,6 @@ namespace MinhaBiblioteca.Models;
 
 public interface IEmprestestimo
 {
-    void Emprestar();
+    public string Emprestar();
+    
 }

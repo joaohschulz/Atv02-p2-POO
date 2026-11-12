@@ -1,6 +1,6 @@
 namespace MinhaBiblioteca.Models;
 
-public interface IEmprestestimo
+public interface IEmprestimo
 {
     public string Emprestar();
     

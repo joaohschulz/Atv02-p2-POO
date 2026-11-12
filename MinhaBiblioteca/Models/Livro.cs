@@ -1,5 +1,5 @@
 namespace MinhaBiblioteca.Models;
-public class Livro : MaterialBiblioteca, IEmprestestimo
+public class Livro : MaterialBiblioteca, IEmprestimo
 {
     public string ?Autor {get; set;}
     public int Paginas {get; set;}
@@ -11,12 +11,12 @@ public class Livro : MaterialBiblioteca, IEmprestestimo
 
     public override string Descricao()
     {
-        return $"O Livro possui {CalcularPrazo()} dias de prazo para a entrega";
+        return $"Livro: {Titulo} - Autor: {Autor}";
     }
     
 
     public string Emprestar()
     {
-        return $"O livro pode ser emprestado por {CalcularPrazo()} dias";
+        return $"O livro {Titulo} pode ser emprestado por {CalcularPrazo()} dias";
     }
 }

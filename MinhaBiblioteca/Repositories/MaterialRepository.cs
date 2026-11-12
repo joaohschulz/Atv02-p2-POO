@@ -3,19 +3,16 @@ using System.Linq;
 
 public class MaterialRepository: IMaterialRepository
 {
+    private static int _proximoId = 3;
     private static int GerarNovoId()
     {
-        if (_materiais.Count == 0)
-        {
-            return 1;
-        }
-        return _materiais.Keys.Max() + 1;
+        return _proximoId++;
     }
 
-    public static Dictionary<int, MaterialBiblioteca> _materiais = new ()
+    private static Dictionary<int, MaterialBiblioteca> _materiais = new ()
     {
         {1, new Livro {Id = 1, Titulo = "Percy Jackson", AnoPublicacao = 2015, Autor = "Rick", Paginas = 300}},
-        {2, new Revista{Id = 2, Titulo = "Revista Importante 3",  }}
+        {2, new Revista{Id = 2, Titulo = "Revista Importante 3",  MesPublicacao = 3, Edicao = 33}}
     };
     
 
